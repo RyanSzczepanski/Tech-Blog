@@ -4,6 +4,9 @@ const { Post, User, Comment, Vote} = require('../models');
 
 router.get("/", (req, res) => {
   Post.findAll({
+    where: {
+      user_id: req.session.user_id
+    },
     attributes: [
       'id',
       'title',
@@ -28,7 +31,7 @@ router.get("/", (req, res) => {
   })
   .then(postData => {
     const posts = postData.map(post => post.get({ plain: true }));
-    res.render("homepage", {
+    res.render("dashboard", {
       posts,
       loggedIn: req.session.loggedIn
     });
