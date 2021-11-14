@@ -17,3 +17,8 @@ app.use(
     saveUninitialized: false
   })
 );
+
+app.listen(PORT, () => {
+    console.log('App listening on PORT ' + PORT);
+  });
+  
