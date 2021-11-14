@@ -1,0 +1,24 @@
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">
+        <form class="post-form container">
+            <div class="mb-3">
+                <label for="post-title" class="form-label">Title</label>
+                <input type="text" id="post-title" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="post-body" class="form-label">Body</label>
+                <textarea id="post-body" class="form-control" rows="5"> </textarea>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Post</button>
+            </div>
+        </form>
+    </li>
+    {{#each posts as |post|}}
+    <li class="list-group-item">
+        {{> post-info post }}
+    </li>
+    {{/each}}
+</ul>
+
+<script src="/javascript/createpost.js"></script>

@@ -1,7 +1,6 @@
-<h1>Posts!</h1>
-<ul class="post-list">
+<ul class="list-group list-group-flush">
   {{#each posts as |post|}}
-  <li>
+  <li class="list-group-item">
     {{> post-info post }}
   </li>
   {{/each}}
