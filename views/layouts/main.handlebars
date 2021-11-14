@@ -11,25 +11,29 @@
     />
   </head>
 
-  <body>
+  <body class="bg-light">
     <Nav>
-      <ul class="nav">
+      <ul class="nav bg-dark">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a
+		    class="nav-link active fs-2 fw-bold"
+			aria-current="page"
+			href="/"
+			>Home</a>
         </li>
 
         {{#if loggedIn}}
 
           <li class="nav-item">
             <a
-              class="nav-link active"
+              class="nav-link active fs-2 fw-bold"
               aria-current="page"
               href="/Dashboard"
             >Dashboard</a>
           </li>
           <li class="nav-item">
             <a
-              class="nav-link active"
+              class="nav-link active fs-2 fw-bold"
               aria-current="page"
               href="#logout"
               onclick="logout()"
@@ -40,7 +44,7 @@
 
           <li class="nav-item">
             <a
-              class="nav-link active"
+              class="nav-link active fs-2 fw-bold"
               aria-current="page"
               href="/Login"
             >Login</a>
