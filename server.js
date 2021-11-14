@@ -29,13 +29,12 @@ const hbs = create({ helpers });
 // Sets Handlebars as the default template engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set("views", "./views");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const routes = require('./controllers');
+const routes = require('./controllers/');
 app.use(routes);
 
 
