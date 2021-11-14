@@ -15,7 +15,7 @@ app.set("views", "./views");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//app.use(routes);
+app.use(routes);
 
 // Sets up the sessions with the 'secret', 'resave', 'saveUninitialized' options
 app.use(
