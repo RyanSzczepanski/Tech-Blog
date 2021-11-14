@@ -1,10 +1,13 @@
 <article class="container">
   <div class="title">
-    <a href="/post/{{id}}" target="_blank">{{title}}</a>
+    <a class="fs-3" href="/post/{{id}}" target="_blank">{{title}}</a>
     <span>Votes: {{ vote_count }}</span>
   </div>
-  <div class="meta">
-     by {{user.username}} on {{created_at}}
-    <p>{{comments.length}} comments</p>
+  <div class="body">
+    <p class="mb-3 mt-2">{{body}}</p>
+  </div>
+  <div class="meta fst-italic">
+    <p class="mb-0">by {{user.username}} on {{created_at}}
+    {{comments.length}} comments</p>
   </div>
 </article>
