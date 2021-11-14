@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tech Blog</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+	<Nav>
+		<ul class="nav">
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="/">Home</a>
+			</li>
+			
+			{{#if loggedIn}}
+
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="#Dashboard">Dashboard</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="#Logout">Logout</a>
+			</li>
+			
+			{{else}}
+
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="#Login">Login</a>
+			</li>
+			
+			{{/if}}
+		</ul>
+	</Nav>
+	{{{ body }}}
+
+</body>
+
+</html>

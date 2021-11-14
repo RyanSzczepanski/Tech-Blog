@@ -1,7 +1,11 @@
 const express = require('express');
-const { create } = require('express-handlebars');
 const session = require(`express-session`);
+const { create } = require('express-handlebars');
+
 const routes = require('./routes');
+
+const sequelize = require("./connection/connection.js");
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const hbs = create({ /* config */ });
