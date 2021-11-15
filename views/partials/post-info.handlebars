@@ -1,7 +1,8 @@
 <article class="container">
+  {{user_id}}
   <div class="title">
     <a class="fs-3" href="/post/{{id}}" target="_blank">{{title}}</a>
-    <span>Votes: {{ vote_count }}</span>
+    <span><a><i class="link-secondary glyphicon glyphicon-arrow-up"></i></a>  {{ vote_count }} </span>
   </div>
   <div class="body">
     <p class="mb-3 mt-2">{{body}}</p>

@@ -28,9 +28,11 @@ router.get("/", (req, res) => {
   })
   .then(postData => {
     const posts = postData.map(post => post.get({ plain: true }));
+    //res.json(req.session)
     res.render("homepage", {
       posts,
-      loggedIn: req.session.loggedIn
+      session: req.session,
+      loggedIn: req.session.loggedIn,
     });
   })
 });
@@ -73,7 +75,8 @@ router.get("/post/:id", (req, res) => {
     const post = postData.get({ plain: true });
     res.render("post", {
       post,
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,
+      user_id: req.session.user_id
     })
   })
 })

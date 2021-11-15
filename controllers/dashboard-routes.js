@@ -33,7 +33,8 @@ router.get("/", (req, res) => {
     const posts = postData.map(post => post.get({ plain: true }));
     res.render("dashboard", {
       posts,
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,
+      user_id: req.session.user_id
     });
   })
 });
