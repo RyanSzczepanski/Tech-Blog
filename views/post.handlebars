@@ -1,0 +1,25 @@
+<ul>
+    <li class="list-group-item mb-5">
+        {{> post-info post }}
+    </li>
+
+    <li class="list-group-item">
+        <form class="comment-form container" id={{post.id}}>
+            <div class="mb-3">
+                <label for="body-comment" class="form-label">Comment</label>
+                <textarea id="body-comment" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Post</button>
+            </div>
+        </form>
+    </li>
+
+    {{#each post.comments as |comment|}}
+    <li class="list-group-item">
+        {{> comment-info comment }}
+    </li>
+    {{/each}}
+</ul>
+
+<script src="/javascript/createcomment.js"></script>

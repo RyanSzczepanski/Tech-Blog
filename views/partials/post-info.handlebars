@@ -7,7 +7,7 @@
     <p class="mb-3 mt-2">{{body}}</p>
   </div>
   <div class="meta fst-italic">
-    <p class="mb-0">by {{user.username}} on {{created_at}}
-    {{comments.length}} comments</p>
+    <p class="mb-0">by {{user.username}} on {{format_date created_at}}</p>
+    {{comments.length}} comments
   </div>
 </article>

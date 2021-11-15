@@ -44,4 +44,38 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get("/post/:id", (req, res) => {
+  Post.findByPk(req.params.id, {
+    attributes: [
+      'id',
+      'title',
+      'body',
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+  .then(postData => {
+    //res.json(postData)
+    const post = postData.get({ plain: true });
+    res.render("post", {
+      post,
+      loggedIn: req.session.loggedIn
+    })
+  })
+})
+
 module.exports = router;
